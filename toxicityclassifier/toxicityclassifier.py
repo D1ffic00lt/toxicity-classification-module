@@ -36,15 +36,29 @@ class ToxicityClassificator(object):
     .. versionadded:: 1.0.0
 
     Methods
-    -------
-    classify(sentence: str) -> int
-        a string is given as input, the function processes it and
-        returns a tuple from the final result (bool) and the
-        probability of this result (float)
-    get_probability(self) -> float
-        decodes the result of the encrypt function by key
+    --------
+    classify(sentence: :class:`str`) -> :class:`int`
+        a string is given as input, the function processes it
+        and returns a tuple from the final result (bool) and
+        the probability of this result (float)
+    get_probability(sentence: :class:`str`) -> float:
+        the function takes a string as input
+        and returns the probability of toxicity
+    predict(sentence: :class:`str`) -> :class:`float`
+        the function takes a string as input
+        and returns a toxic text toxicity status
+    download_nlkt() -> None:
+        nlkt error-correcting function
     """
     def __init__(self) -> None:
+        """
+        Returns
+        --------
+        :exc:`.FileNotFoundError`
+            if it happens, then this is a problem,
+            there are no model files in the directory,
+            I honestly don’t know how to solve it
+        """
         self._russian_snowball: SnowballStemmer = SnowballStemmer(language="russian")
         self._english_snowball: SnowballStemmer = SnowballStemmer(language="english")
         self._sentence: str = ""
@@ -56,6 +70,69 @@ class ToxicityClassificator(object):
         self._toxic_propabality: float = 6.
         self._weight: float = 0.5
         self._language_weight: float = 0.5
+
+    def predict(self, sentence: str) -> Tuple[int, float]:
+        """
+        Function predicts text toxicity class and probability
+
+        Parameters
+        --------
+        :param sentence: :class:`str`
+            string to be processed to further
+            predict the degree of toxicity
+
+        Returns
+        --------
+        Tuple[int, float]
+            the function returns the message the probability value
+
+        """
+        if not self.__check_models():
+            self.__get_models()
+        if not self.__check_vectorizers():
+            self.__get_vectorizers()
+        return self.__get_toxicity(sentence)
+
+    def get_probability(self, sentence: str) -> float:
+        """
+        Function predicts text toxicity probability
+
+        Parameters
+        --------
+        :param sentence: :class:`str`
+            string to be processed to further
+            predict the degree of toxicity
+
+        Returns
+        --------
+        :class:`float`
+            the function returns the probability of toxicity
+
+        """
+        return self.predict(sentence)[1]
+
+    def classify(self, sentence: str) -> float:
+        """
+        Function predicts text toxicity value
+
+        Parameters
+        --------
+        :param sentence: :class:`str`
+            string to be processed to further
+            predict the degree of toxicity
+
+        Returns
+        --------
+        :class:`float`
+            the function returns the message class (1 or 0)
+        """
+        return self.predict(sentence)[0]
+
+    @staticmethod
+    def download_nlkt() -> None:
+        """function fixes nlkt error"""
+        nltk.download("punkt")
+        nltk.download("stopwords")
 
     def __russian_tokenizer(self, sentence: str) -> str:
         self._sentence = sentence.strip().lower()
@@ -123,24 +200,6 @@ class ToxicityClassificator(object):
     def __check_vectorizers(self) -> bool:
         return True if self._russian_vectorizer is not None and self._english_vectorizer is not None else False
 
-    def classify(self, sentence: str) -> Tuple[int, float]:
-        if not self.__check_models():
-            self.__get_models()
-        if not self.__check_vectorizers():
-            self.__get_vectorizers()
-        return self.__get_toxicity(sentence)
-
-    def get_probability(self, sentence: str) -> float:
-        return self.classify(sentence)[1]
-
-    def predict(self):
-        pass
-
-    @staticmethod
-    def download_nlkt() -> None:
-        nltk.download("punkt")
-        nltk.download("stopwords")
-
     @property
     def weight(self) -> float:
         return self._weight
@@ -161,3 +220,7 @@ class ToxicityClassificator(object):
             raise ValueError("language_weight must be between 0 and 1")
         self._language_weight = value
 
+
+if __name__ == "__main__":
+    print(ToxicityClassificator().predict(input("Enter text: ")))
+    input()
