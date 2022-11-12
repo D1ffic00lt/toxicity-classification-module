@@ -6,6 +6,7 @@ A basic wrapper for the Discord API.
 :copyright: (c) 2022-present D1ffic00lt
 :license: MIT, see LICENSE for more details.
 """
+
 try:
     from sklearn.metrics import accuracy_score
 except ImportError:
