@@ -16,9 +16,10 @@ try:
 except ImportError:
     raise ImportError("nltk is not installed. Try \"pip install nltk\"")
 
-from toxicityclassifier import *
+from toxicityclassifier.toxicityclassifier import *
 
-__version__ = "0.1.0"
+__version__ = "0.1.5"
 __title__ = 'ToxicityClassificator'
 __author__ = "D1ffic00lt"
 __copyright__ = "Copyright 2013-2022 {}".format(__author__)
+__all__ = ("ToxicityClassificator", )

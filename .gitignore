@@ -1,2 +1,3 @@
 dist/
 exe/
+__pycache__
