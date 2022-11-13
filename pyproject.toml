@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "toxicityclassifier"
-version = "0.1.5"
+version = "0.1.6"
 description = "module for predicting toxicity messages in Russian and English"
 authors = ["D1ffic00lt <dm.filinov@gmail.com>"]
 license = "MIT License"
@@ -10,7 +10,7 @@ repository = "https://github.com/D1ffic00lt/toxicity-classification-module"
 documentation = "https://github.com/D1ffic00lt/toxicity-classification-module"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 
 [build-system]
 requires = [
