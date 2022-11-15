@@ -1,12 +1,15 @@
 [tool.poetry]
 name = "toxicityclassifier"
-version = "0.1.2"
+version = "0.1.3"
 description = "Module encoding and encrypting text by key"
 authors = ["D1ffic00lt <dm.filinov@gmail.com>"]
 license = "MIT License"
+homepage = "https://github.com/D1ffic00lt/toxicity-classification-module"
+repository = "https://github.com/D1ffic00lt/toxicity-classification-module"
+documentation = "https://github.com/D1ffic00lt/toxicity-classification-module/README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 
