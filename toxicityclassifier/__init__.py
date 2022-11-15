@@ -19,7 +19,7 @@ except ImportError:
 
 from toxicityclassifier.toxicityclassifier import *
 
-__version__ = "0.1.5"
+__version__ = "0.1.9"
 __title__ = 'ToxicityClassificator'
 __author__ = "D1ffic00lt"
 __copyright__ = "Copyright 2013-2022 {}".format(__author__)
