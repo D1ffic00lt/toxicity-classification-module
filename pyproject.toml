@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "toxicityclassifier"
-version = "0.1.1"
+version = "0.1.2"
 description = "Module encoding and encrypting text by key"
 authors = ["D1ffic00lt <dm.filinov@gmail.com>"]
 license = "MIT License"
