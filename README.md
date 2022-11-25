@@ -1,5 +1,5 @@
 # ToxicityClassificator
-Module encoding and encrypting text by key
+Module for predicting toxicity messages in Russian and English
 ## Usage example
 ```python
 from toxicityclassifier import *
