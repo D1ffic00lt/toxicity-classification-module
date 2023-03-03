@@ -3,7 +3,7 @@
 Python Encoder
 ~~~~~~~~~~~~~~~~~~~
 A basic wrapper for the Discord API.
-:copyright: (c) 2022-present D1ffic00lt
+:copyright: (c) 2023-present Dmitry Filinov (D1ffic00lt)
 :license: MIT, see LICENSE for more details.
 """
 
@@ -21,8 +21,8 @@ from toxicityclassifier.toxicityclassifier import *
 
 __version__ = "0.1.10"
 __title__ = 'ToxicityClassificator'
-__author__ = "D1ffic00lt"
-__copyright__ = "Copyright 2013-2022 {}".format(__author__)
+__author__ = "Dmitry Filinov (D1ffic00lt)"
+__copyright__ = "Copyright 2022-2023 {}".format(__author__)
 __all__ = (
-    "ToxicityClassificator",
+    "ToxicityClassificatorV1",
 )

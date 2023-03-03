@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 """
 The MIT License (MIT)
-Copyright (c) 2022-present D1ffic00lt
+Copyright (c) 2023-present Dmitry Filinov (D1ffic00lt)
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),
 to deal in the Software without restriction, including without limitation
@@ -28,10 +28,12 @@ from nltk import word_tokenize, SnowballStemmer
 from nltk.corpus import stopwords
 from typing import Tuple, List
 
-__all__ = ("ToxicityClassificator", )
+__all__ = (
+    "ToxicityClassificatorV1",
+)
 
 
-class ToxicityClassificator(object):
+class ToxicityClassificatorV1(object):
     r"""
     A class that determines the degree of toxicity
     of the text using the module "logistic regression"
@@ -227,8 +229,8 @@ class ToxicityClassificator(object):
         return '%s()' % (self.__class__.__name__, )
 
     def __new__(cls, *args, **kwargs):
-        return object.__new__(ToxicityClassificator)
+        return object.__new__(ToxicityClassificatorV1)
 
 
 if __name__ == "__main__":
-    print(repr(ToxicityClassificator()))
+    print(repr(ToxicityClassificatorV1()))
