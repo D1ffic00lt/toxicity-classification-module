@@ -4,7 +4,7 @@ Module for predicting toxicity messages in Russian and English
 ```python
 from toxicityclassifier import *
 
-classifier = ToxicityClassificator()
+classifier = ToxicityClassificatorV1()
 
 print(classifier.predict(text))          # (0 or 1, probability)
 print(classifier.get_probability(text))  # probability

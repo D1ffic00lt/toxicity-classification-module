@@ -3,6 +3,7 @@ name = "toxicityclassifier"
 version = "0.1.11"
 description = "Module for determining the degree of toxicity of the text"
 authors = ["D1ffic00lt <dm.filinov@gmail.com>"]
+
 license = "MIT License"
 homepage = "https://github.com/D1ffic00lt/toxicity-classification-module"
 repository = "https://github.com/D1ffic00lt/toxicity-classification-module"
