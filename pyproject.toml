@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "toxicityclassifier"
-version = "0.1.11"
-description = "Module for determining the degree of toxicity of the text"
+version = "1.0.0"
+description = "Module for determining the level of toxicity of the text"
 authors = ["D1ffic00lt <dm.filinov@gmail.com>"]
 
 license = "MIT License"
