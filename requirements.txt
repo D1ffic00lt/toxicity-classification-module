@@ -1,10 +1,10 @@
 poetry-core>=1.0.0
 setuptools>=43.0.0
 wheel
-pandas>=1.4.1
+pandas>=2.3.3
 scikit-learn>=1.0.2
 numpy>=1.22.2
 nltk>=3.7
 tqdm>=4.62.3
-pandas>=1.4.1
+pandas>=2.3.3
 numpy>=1.22.2
