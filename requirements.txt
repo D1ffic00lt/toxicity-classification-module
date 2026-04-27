@@ -1,5 +1,5 @@
 poetry-core>=1.0.0
-setuptools>=43.0.0
+setuptools>=82.0.1
 wheel
 pandas>=1.4.1
 scikit-learn>=1.0.2
